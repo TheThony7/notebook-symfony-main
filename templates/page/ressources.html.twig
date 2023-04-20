@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les resources
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-white">Toutes les ressources</h1>
+
+	<p class="text-white fs-5">Voici toutes les ressources disponibes</p>
+
+	<div class="row mt-5">
+		{% for item in resource %}
+			<div class="shadow col-md-4 mb-4">
+				<div class="card card-bg rounded-4">
+					<div class="card-body">
+						<h5 class="card-title">{{ item.title }}</h5>
+						<a href="" class="btn btn-gradient">Voir la ressource</a>
+						<a href="" class="btn btn-gradient">Modifier</a>
+					</div>
+				</div>
+			</div>
+		{% else %}
+			<div class="col-md-12">
+				<div class="alert alert-warning" role="alert">
+					<h4 class="alert-heading">Aucune ressource</h4>
+					<p>Il n'y a aucune ressource pour le moment.</p>
+					<hr>
+					<p class="mb-0">Vous pouvez en créer une, en cliquant sur le bouton ci-dessous.</p>
+					<a href="" class="btn btn-success mt-3">Créer une ressource</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

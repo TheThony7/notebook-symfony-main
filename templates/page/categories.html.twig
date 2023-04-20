@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les catégories
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-white">Toutes les catégories</h1>
+
+	<p class="text-white fs-5">Voici toutes les catégories disponibes</p>
+
+	<div class="row mt-5">
+		{% for item in category %}
+			<div class="shadow col-md-3 mb-4">
+				<div class="card rounded-4">
+					<div class="card-body">
+						<h5 class="card-title">Catégorie :
+							{{ item.title }}</h5>
+						<a href="" class="btn btn-gradient">Modifier</a>
+					</div>
+				</div>
+			</div>
+		{% else %}
+			<div class="col-md-12">
+				<div class="alert alert-warning" role="alert">
+					<h4 class="alert-heading">Aucune catégorie</h4>
+					<p>Il n'y a aucune catégorie pour le moment.</p>
+					<hr>
+					<p class="mb-0">Vous pouvez en créer une, en cliquant sur le bouton ci-dessous.</p>
+					<a href="" class="btn btn-success mt-3">Créer une catégorie</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+	<hr class="text-white">
+
+	{% include 'partials/_last-notes.html.twig' %}
+
+{% endblock %}

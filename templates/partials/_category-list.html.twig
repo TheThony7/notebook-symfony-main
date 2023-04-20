@@ -1,0 +1,9 @@
+<div class="text-center">
+    <h3 class="text-white mb-4">Les catégories des notes</h3>
+
+    <p>
+        {% for item in category %}
+            <span class="btn rounded-pill nb-btn nb-{{ item.color }}">{{ item.title }}</span> 
+        {% endfor %}
+    </p>
+</div>

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les notes
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-white">Toutes les notes</h1>
+
+	<p class="text-white fs-5">Voici toutes les notes disponibes</p>
+
+	<div class="row mt-5">
+		{% for item in note %}
+			<div class="shadow col-md-4 mb-4">
+				<div class="card card-bg rounded-4">
+					<div class="card-body">
+						<h5 class="card-title">{{ item.title }}</h5>
+						<p class="card-text">{{ item.description }}</p>
+						<a href={{ path('show_note', { id: item.id }) }} class="btn btn-gradient">Voir la note</a>
+						<a href="" class="btn btn-gradient">Modifier</a>
+
+					</div>
+				</div>
+			</div>
+		{% else %}
+			<div class="col-md-12">
+				<div class="alert alert-warning" role="alert">
+					<h4 class="alert-heading">Aucune note</h4>
+					<p>Il n'y a aucune note pour le moment.</p>
+					<hr>
+					<p class="mb-0">Vous pouvez en créer une, en cliquant sur le bouton ci-dessous.</p>
+					<a href="" class="btn btn-success mt-3">Créer une note</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<p class="mt-4 fs-4 text-white">Voir les dernières notes</p>
+
+<div class="row mt-3">
+    {% for item in note %}
+        <div class="shadow col-md-4 mb-4">
+            <a href={{ path('show_note', {id: item.id}) }} style="text-decoration: none;">
+                <div class="card rounded-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% else %}
+        <div class="col-md-12">
+            <div class="alert alert-warning" role="alert">
+                <h4 class="alert-heading">Aucune note</h4>
+                <p>Il n'y a aucune note pour le moment.</p>
+                <hr>
+                <p class="mb-0">Vous pouvez en créer une, en cliquant sur le bouton ci-dessous.</p>
+                <a href="" class="btn btn-success mt-3">Créer une note</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>

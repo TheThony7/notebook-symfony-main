@@ -1,0 +1,197 @@
+body {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.2em;
+}
+
+body,
+.btn-gradient {
+  background: linear-gradient(270deg, #010031, #2f003d, #0e2750);
+  background-size: 600% 600%;
+  -webkit-animation: BackgroundGradient 7s ease infinite;
+  -moz-animation: BackgroundGradient 7s ease infinite;
+  animation: BackgroundGradient 7s ease infinite;
+}
+
+.flex {
+  display: flex;
+}
+
+/* Entete, titres et liens */
+.nav-link li {
+  list-style: none;
+  margin: 0 0.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+}
+
+.nb-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-gradient {
+  background: linear-gradient(90deg, #fff, #fff, #dedede, #fff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(90deg, #fff, #fefcf3);
+}
+
+/* Cards */
+.card-bg {
+  background-image: url("../images/paper-bg.jpeg");
+  background-size: contain;
+  transition: all 150ms ease-in;
+}
+
+.card-bg:hover {
+  transform: scale(0.95);
+  transition: all 150ms ease-in;
+}
+
+
+
+/* Boutons personnalisés */
+.btn {
+  border-radius: 5em;
+  font-family: "Cabin", sans-serif;
+}
+
+.btn-gradient,
+.btn-gradient:hover,
+.btn-gradient:focus {
+  color: #fff;
+}
+
+.btn-gradient:hover {
+  background: #ffffff;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+/* Bagdes des catégories */
+.nb-btn:hover {
+  background: #ffffff;
+  color: #000;
+  transition: all 350ms ease-in;
+}
+
+.nb-red {
+  background-color: red;
+  color: #fff;
+}
+.nb-blue {
+  background-color: blue;
+  color: #fff;
+}
+.nb-green {
+  background-color: green;
+  color: #fff;
+}
+.nb-yellow {
+  background-color: yellow;
+}
+.nb-orange {
+  background-color: orange;
+}
+.nb-purple {
+  background-color: purple;
+  color: #fff;
+}
+.nb-pink {
+  background-color: pink;
+}
+.nb-brown {
+  background-color: brown;
+  color: #fff;
+}
+.nb-black {
+  background-color: black;
+  color: #fff;
+}
+.nb-white {
+  background-color: white;
+}
+.nb-grey {
+  background-color: grey;
+  color: #fff;
+}
+.nb-cyan {
+  background-color: cyan;
+}
+.nb-magenta {
+  background-color: magenta;
+}
+.nb-lime {
+  background-color: lime;
+}
+.nb-olive {
+  background-color: olive;
+  color: #fff;
+}
+.nb-teal {
+  background-color: teal;
+  color: #fff;
+}
+.nb-navy {
+  background-color: navy;
+  color: #fff;
+}
+.nb-maroon {
+  background-color: maroon;
+  color: #fff;
+}
+.nb-aqua {
+  background-color: rgb(0, 217, 255);
+}
+.nb-fuchsia {
+  background-color: rgb(255, 0, 200);
+}
+
+/* Animation */
+@-webkit-keyframes BackgroundGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes BackgroundGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes BackgroundGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Path: public/assets/css/custom.css */

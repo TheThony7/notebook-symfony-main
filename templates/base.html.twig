@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Notebook •
+			{% block title %}{% endblock %}
+		</title>
+		<link rel="icon" href={{ asset('assets/images/icon.svg') }}>
+		<link rel="stylesheet" href={{ asset('assets/css/bootstrap.min.css') }}>
+		<link rel="stylesheet" href={{ asset('assets/css/custom.css') }}>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cabin&family=Fira+Sans:wght@200&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+	</head>
+	<body>
+		<main>
+			<div class="container py-4">
+				<header class="nb-header pb-3 mb-4 border-bottom d-flex align-items-center">
+					<a href={{ path('home') }} class="text-white text-decoration-none">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 28 28"><path fill="currentColor" d="M14 7.5a6.5 6.5 0 1 1-13 0a6.5 6.5 0 0 1 13 0Zm-6-4a.5.5 0 0 0-1 0V7H3.5a.5.5 0 0 0 0 1H7v3.5a.5.5 0 0 0 1 0V8h3.5a.5.5 0 0 0 0-1H8V3.5Zm13.25 1h-6.874A7.486 7.486 0 0 0 13.5 3h7.749A3.75 3.75 0 0 1 25 6.75v8.507a3.75 3.75 0 0 1-1.098 2.652l-5.993 5.993A3.75 3.75 0 0 1 15.257 25H6.75A3.75 3.75 0 0 1 3 21.25V13.5a7.51 7.51 0 0 0 1.5.876v6.874a2.25 2.25 0 0 0 2.25 2.25H15v-4.75A3.75 3.75 0 0 1 18.75 15h4.75V6.75a2.25 2.25 0 0 0-2.25-2.25ZM16.5 23.126c.124-.083.241-.178.348-.285l5.993-5.993c.107-.107.202-.224.285-.348H18.75a2.25 2.25 0 0 0-2.25 2.25v4.376Z"/></svg>
+						<span class="fs-5">My Notebook</span>
+					</a>
+					<ul class="flex nav-link mb-0">
+						<li data-bs-toggle="tooltip" 
+							data-bs-placement="bottom" 
+							data-bs-title="Notes">
+							<a href={{ path('notes') }} class="text-white">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 24 24"><path fill="currentColor" d="M7 6a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Zm1.5 1.5h7v-1h-7v1ZM4 4.5A2.5 2.5 0 0 1 6.5 2H18a2.5 2.5 0 0 1 2.5 2.5v14.25a.75.75 0 0 1-.75.75H5.5a1 1 0 0 0 1 1h13.25a.75.75 0 0 1 0 1.5H6.5A2.5 2.5 0 0 1 4 19.5v-15ZM5.5 18H19V4.5a1 1 0 0 0-1-1H6.5a1 1 0 0 0-1 1V18Z"/></svg>
+							</a>
+						</li>
+						<li data-bs-toggle="tooltip" 
+							data-bs-placement="bottom" 
+							data-bs-title="Catégories">
+							<a href={{ path('categories') }} class="text-white">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 28 28"><path fill="currentColor" d="M20.841 2.655a2.25 2.25 0 0 0-3.182 0L13.5 6.815v-.561a2.25 2.25 0 0 0-2.25-2.25h-7A2.25 2.25 0 0 0 2 6.254v18c0 .966.784 1.75 1.75 1.75h18a2.25 2.25 0 0 0 2.25-2.25V16.75a2.25 2.25 0 0 0-2.25-2.25h-.556l4.155-4.155a2.25 2.25 0 0 0 0-3.182l-4.508-4.508ZM17.306 14.5H13.5v-3.806l3.806 3.806ZM18.72 3.716a.75.75 0 0 1 1.06 0l4.508 4.508a.75.75 0 0 1 0 1.06l-4.508 4.508a.75.75 0 0 1-1.06 0l-4.508-4.508a.75.75 0 0 1 0-1.06l4.508-4.508ZM12 6.254V14.5H3.5V6.254a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 .75.75Zm-8.5 17.5V16H12v8.504H4.25a.75.75 0 0 1-.75-.75ZM13.5 16h8.25a.75.75 0 0 1 .75.75v7.004a.75.75 0 0 1-.75.75H13.5V16Z"/></svg>
+							</a>
+						</li>
+						<li data-bs-toggle="tooltip" 
+							data-bs-placement="bottom" 
+							data-bs-title="Ressources">
+							<a href={{ path('resources') }} class="text-white">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 6.501a5.5 5.5 0 0 1 5-5.478v5.77l-1.646-1.646a.5.5 0 0 0-.708.708l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5a.5.5 0 0 0-.708-.708L17 6.794v-5.77A5.5 5.5 0 1 1 11 6.5Zm8.5 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5Zm1.5 1.69a6.52 6.52 0 0 1-1.5 1.078V14h-4.558a.692.692 0 0 0-.692.692v.058a2.25 2.25 0 0 1-4.5 0v-.058A.692.692 0 0 0 9.058 14H4.5V9.5h6.232a6.457 6.457 0 0 1-.558-1.5H4.5v-.75c0-.967.784-1.75 1.75-1.75h3.826a6.45 6.45 0 0 1 .422-1.5H6.25A3.25 3.25 0 0 0 3 7.251v11.5a3.25 3.25 0 0 0 3.25 3.25h11.5a3.25 3.25 0 0 0 3.25-3.25v-7.56Zm-1.5 4.31v3.25a1.75 1.75 0 0 1-1.75 1.75H6.25a1.75 1.75 0 0 1-1.75-1.75v-3.25h3.825a3.751 3.751 0 0 0 7.35 0H19.5Z"/></svg>
+							</a>
+						</li>
+						<li data-bs-toggle="tooltip" 
+							data-bs-placement="bottom" 
+							data-bs-title="Déconnexion">
+							<a href={{ path('app_logout') }} class="text-white">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 24 24"><path fill="currentColor" d="M8.502 11.5a1.002 1.002 0 1 1 0 2.004a1.002 1.002 0 0 1 0-2.005ZM12 4.353v6.651h7.442L17.72 9.28a.75.75 0 0 1-.073-.977l.073-.084a.75.75 0 0 1 .976-.072l.084.072l2.997 2.998a.75.75 0 0 1 .073.976l-.073.084l-2.996 3.003a.75.75 0 0 1-1.134-.975l.072-.084l1.713-1.717h-7.431L12 19.25a.75.75 0 0 1-.88.738l-8.5-1.501a.75.75 0 0 1-.62-.739V5.75a.75.75 0 0 1 .628-.74l8.5-1.396a.75.75 0 0 1 .872.74Zm-1.5.883l-7 1.15v10.732l7 1.236V5.237ZM13 18.5h.765l.102-.007a.75.75 0 0 0 .648-.744l-.007-4.25H13v5Zm.002-8.5L13 8.725V5h.745a.75.75 0 0 1 .743.647l.007.101l.007 4.252h-1.5Z"/></svg>
+							</a>
+						</li>
+					</ul>
+				</header>
+
+				{% block body %}{% endblock %}
+
+				<footer class="pt-3 mt-4 border-top text-center text-white">
+					<h6 class="text-wihte">Cette application est construite avec :</h6>
+					<p class="d-flex align-items-center justify-content-center gap-3 text-center">
+            			<i class="fs-1 devicon-php-plain"></i>
+						<i class="fs-3 devicon-symfony-original"></i>
+						<i class="fs-1 devicon-mysql-plain-wordmark"></i>
+					</p>
+					<p>
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 28 28"><path fill="currentColor" d="M14 7.5a6.5 6.5 0 1 1-13 0a6.5 6.5 0 0 1 13 0Zm-6-4a.5.5 0 0 0-1 0V7H3.5a.5.5 0 0 0 0 1H7v3.5a.5.5 0 0 0 1 0V8h3.5a.5.5 0 0 0 0-1H8V3.5Zm13.25 1h-6.874A7.486 7.486 0 0 0 13.5 3h7.749A3.75 3.75 0 0 1 25 6.75v8.507a3.75 3.75 0 0 1-1.098 2.652l-5.993 5.993A3.75 3.75 0 0 1 15.257 25H6.75A3.75 3.75 0 0 1 3 21.25V13.5a7.51 7.51 0 0 0 1.5.876v6.874a2.25 2.25 0 0 0 2.25 2.25H15v-4.75A3.75 3.75 0 0 1 18.75 15h4.75V6.75a2.25 2.25 0 0 0-2.25-2.25ZM16.5 23.126c.124-.083.241-.178.348-.285l5.993-5.993c.107-.107.202-.224.285-.348H18.75a2.25 2.25 0 0 0-2.25 2.25v4.376Z"/></svg>
+						Notebook • {{ 'now'|date('Y') }}
+					</p>
+				</footer>
+			</div>
+		</main>
+
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+		<script src={{ asset('assets/js/bootstrap.min.js')}}></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+		<script>
+			const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+			const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+		</script>
+	</body>
+</html>

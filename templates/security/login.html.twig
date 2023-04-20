@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <main class="form-signin w-50 m-auto">
+
+        <h1 class="m-5 fw-normal text-white text-center">Connexion à Notebook</h1>
+
+        <form method="post" class="shadow bg-white p-4 br-1 rounded-3 mb-5">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div class="mb-3 text-center">
+                    Vous êtes déjà connecté(e) ! <br>
+                    L'adresse email utilisée est : <br>
+                     {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+            {% endif %}
+
+
+            <div class="form-floating mb-3">
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" placeholder="martin@gmail.com" required autofocus>
+                <label for="inputEmail">Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="martin" required>
+                <label for="inputPassword">Mot de passe</label>
+            </div>
+            
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> 
+                Se souvenir de moi
+            </label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-gradient" type="submit">Sign in</button>
+        </form>
+
+    </main>
+{% endblock %}
